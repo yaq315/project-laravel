@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdventureController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ContactController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -73,9 +74,9 @@ Route::get('/faq', function () {
 })->name('faq');
 
 // Contact Us Page
-Route::get('/contact', function () {
-    return view('contact');
-})->name('contact');
+Route::get('/contacts', function () {
+    return view('contacts');
+})->name('contacts');
 
 Route::get('/search-adventures', [AdventureController::class, 'search'])->name('search.adventures');
 
@@ -88,3 +89,5 @@ Route::get('/booking', function () {
 })->name('booking');
 
 Route::resource('users', UserController::class);
+
+Route::resource('contact', ContactController::class);

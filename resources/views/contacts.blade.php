@@ -53,7 +53,8 @@
           </div>
         </div>
         <div class="col-md-8 col-lg-9">
-          <form class="row contact_form" action="{{ route('contact') }}" method="post" id="contactForm" novalidate="novalidate">
+          <form class="row contact_form" action="{{ route('contact.store') }}" method="post" id="contactForm" novalidate="novalidate">
+            @csrf
             <div class="col-md-6">
               <div class="form-group">
                 <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name" required>

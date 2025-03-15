@@ -14,7 +14,7 @@
         <h4>Quick Links</h4>
         <ul>
           <li><a href="{{ route('aboutus') }}">About Us</a></li>
-          <li><a href="{{ route('contact') }}">Contact Us</a></li>
+          <li><a href="{{ route('contacts') }}">Contact Us</a></li>
           <li><a href="{{ route('faq') }}">FAQ</a></li>
           <li><a href="{{ route('blog') }}">Blog</a></li>
         </ul>
@@ -31,10 +31,10 @@
       <div class="col-xl-2 col-sm-6 mb-4 mb-xl-0 single-footer-widget">
         <h4>Support</h4>
         <ul>
-          <li><a href="{{ route('contact') }}">Help Center</a></li>
-          <li><a href="{{ route('contact') }}">Cancellation Policy</a></li>
-          <li><a href="{{ route('contact') }}">Privacy Policy</a></li>
-          <li><a href="{{ route('contact') }}">Customer Support</a></li>
+          <li><a href="{{ route('contacts') }}">Help Center</a></li>
+          <li><a href="{{ route('contacts') }}">Cancellation Policy</a></li>
+          <li><a href="{{ route('contacts') }}">Privacy Policy</a></li>
+          <li><a href="{{ route('contacts') }}">Customer Support</a></li>
         </ul>
       </div>
       <div class="col-xl-4 col-md-8 mb-4 mb-xl-0 single-footer-widget">
