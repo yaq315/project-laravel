@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdventureController;
+use App\Http\Controllers\UserController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -85,3 +86,5 @@ Route::get('/aboutus', function () {
 Route::get('/booking', function () {
     return view('booking');
 })->name('booking');
+
+Route::resource('users', UserController::class);
