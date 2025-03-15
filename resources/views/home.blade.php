@@ -2,7 +2,7 @@
 
 
   @extends('layouts.contain-home')
-  @extends('layouts.contain-about')
+
 
 
 
