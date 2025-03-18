@@ -58,10 +58,53 @@
           </div>
         </div>
 
+
         <div class="col-md-6 col-xl-4 mb-5">
           <div class="card card-explore">
             <div class="card-explore__img">
-              <img class="card-img" src="img/home/14.jpg" alt="">
+              <img class="card-img" src="img/home/ballon.jpeg" alt="" style="height: 250px">
+            </div>
+            <div class="card-body">
+              <h3 class="card-explore__price">$100.00<sub>/ Per Person</sub></h3>
+              <h4 class="card-explore__title"><a href="#">Hot Air Ballon Ride</a></h4>
+              <p>Get a breathtaking aerial view of the desert at sunrise.</p>
+              <a class="card-explore__link" href="#">Book Now <i class="ti-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-xl-4 mb-5">
+          <div class="card card-explore">
+            <div class="card-explore__img">
+              <img class="card-img" src="img/home/sandboarding.jpeg" alt="" style="height: 250px">
+            </div>
+            <div class="card-body">
+              <h3 class="card-explore__price">$20.00<sub>/ Per Person</sub></h3>
+              <h4 class="card-explore__title"><a href="#">Sandboarding</a></h4>
+              <p>Find a large dune and slide down on a sandboard for an adrenaline rush!</p>
+              <a class="card-explore__link" href="#">Book Now <i class="ti-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-xl-4 mb-5">
+          <div class="card card-explore">
+            <div class="card-explore__img">
+              <img class="card-img" src="img/home/camel.jpeg" alt="" style="height: 250px">
+            </div>
+            <div class="card-body">
+              <h3 class="card-explore__price">$50.00<sub>/ Per Person</sub></h3>
+              <h4 class="card-explore__title"><a href="#">Camel Trekking</a></h4>
+              <p>Experience the desert like the Bedouins by riding a camel through the dunes. You can do a short ride or a multi-day trek</p>
+              <a class="card-explore__link" href="#">Book Now <i class="ti-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-xl-4 mb-5">
+          <div class="card card-explore">
+            <div class="card-explore__img">
+              <img class="card-img" src="img/home/14.jpg" alt="" style="height: 250px">
             </div>
             <div class="card-body">
               <h3 class="card-explore__price">$250.00 <sub>/ Per Night</sub></h3>
@@ -75,7 +118,7 @@
         <div class="col-md-6 col-xl-4 mb-5">
           <div class="card card-explore">
             <div class="card-explore__img">
-              <img class="card-img" src="img/home/15.jpg" alt="">
+              <img class="card-img" src="img/home/15.jpg" alt="" style="height: 230px">
             </div>
             <div class="card-body">
               <h3 class="card-explore__price">$130.00 <sub>/ Per Night</sub></h3>
@@ -89,7 +132,7 @@
         <div class="col-md-6 col-xl-4 mb-5">
           <div class="card card-explore">
             <div class="card-explore__img">
-              <img class="card-img" src="img/home/16.jpg" alt="">
+              <img class="card-img" src="img/home/16.jpg" alt="" style="height: 250px">
             </div>
             <div class="card-body">
               <h3 class="card-explore__price">$200.00 <sub>/ Per Night</sub></h3>

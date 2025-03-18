@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdventureController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\AuthController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,9 +26,9 @@ Route::get('/web', function () {
 });
 
 
-Route::get('/dash', function () {
-    return view('dashboard');
-});
+// Route::get('/dash', function () {
+//     return view('dashboard');
+// });
 
 
 
@@ -51,6 +52,11 @@ Route::get('/dash', function () {
 Route::get('/', function () {
     return view('home');
 })->name('home');
+
+Route::get('/dash', function () {
+    return view('dashboard');
+})->name('dashboard');
+
 
 // About Us Page
 
@@ -91,3 +97,7 @@ Route::get('/booking', function () {
 Route::resource('users', UserController::class);
 
 Route::resource('contact', ContactController::class);
+
+
+Route::get('/login', [AuthController::class, 'showLogin'])->name('login');
+Route::post('/login', [AuthController::class, 'login'])->middleware('checkRole');

@@ -132,6 +132,7 @@ button {
 .header_area {
   position: absolute;
   width: 100%;
+
   
   z-index: 999999;
   background: #fff;
@@ -381,7 +382,7 @@ button {
 
 .header-top {
   padding: 0px 0;
-  height: 150px;
+  height: 100px;
   border-bottom: 1px solid #F0F0F0; }
   @media (min-width: 767px) {
     .header-top {

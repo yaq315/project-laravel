@@ -16,21 +16,28 @@ class ContactController extends Controller
 
     public function create()
     {
-        return view('contact.create');
+        return view('contacts');
     }
 
     public function store(Request $request)
     {
-        $request->validate([
-            'name' => 'required',
-            'email' => 'required|email',
-            'subject' => 'required',
-            'message' => 'required',
-        ]);
+    
+      $request->validate([
+        'name' => 'required|string|max:255',
+        'email' => 'required|email|max:255',
+        'subject' => 'required|string|max:255',
+        'message' => 'required|string',
+    ]);
 
-        Contact::create($request->all());
+   
+    Contact::create([
+        'name' => $request->name,
+        'email' => $request->email,
+        'subject' => $request->subject,
+        'message' => $request->message,
+    ]);
 
-        return redirect()->route('contact.index')->with('success', 'Message sent successfully!');
+    return redirect()->route('contact.index')->with('success', 'Message sent successfully!');
     }
 
     public function show(Contact $contact)

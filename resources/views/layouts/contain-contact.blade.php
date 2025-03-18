@@ -20,7 +20,7 @@
   <!-- Main Content -->
   <main>
     @yield('content')
-  
+    @yield('content1')
 </main>
 
     @include('layouts.footer')
