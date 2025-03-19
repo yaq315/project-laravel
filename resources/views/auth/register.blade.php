@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login | RumQuest</title>
+    <title>Register | RumQuest</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <style>
         /* General Styles */
@@ -20,7 +20,7 @@
             margin: 0;
         }
 
-        .login-container {
+        .register-container {
             background: rgba(255, 255, 255, 0.1);
             padding: 30px 40px;
             border-radius: 15px;
@@ -113,9 +113,8 @@
 </head>
 <body>
   
-
-    <div class="login-container">
-        <h2>Login</h2>
+    <div class="register-container">
+        <h2>Register</h2>
 
         @if ($errors->any())
             <div class="error">
@@ -123,8 +122,13 @@
             </div>
         @endif
 
-        <form action="{{ route('login') }}" method="POST">
+        <form action="{{ route('register') }}" method="POST">
             @csrf
+
+            <div class="input-container">
+                <i class="fas fa-user"></i>
+                <input type="text" name="name" placeholder="Full Name" required>
+            </div>
 
             <div class="input-container">
                 <i class="fas fa-envelope"></i>
@@ -136,11 +140,16 @@
                 <input type="password" name="password" placeholder="Password" required>
             </div>
 
-            <button type="submit">Login</button>
+            <div class="input-container">
+                <i class="fas fa-lock"></i>
+                <input type="password" name="password_confirmation" placeholder="Confirm Password" required>
+            </div>
+
+            <button type="submit">Register</button>
         </form>
 
-        <p>Don't have an account? <a href="{{route('register')}}">Create a new account</a></p>
+        <p>Already have an account? <a href="{{ route('login') }}">Login here</a></p>
     </div>
-  
+
 </body>
 </html>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Models\User;
 
 class AuthController extends Controller
 {
@@ -25,5 +26,27 @@ class AuthController extends Controller
         }
 
         return back()->withErrors(['error' => 'password error']);
+    }
+
+    public function showRegisterForm()
+    {
+        return view('auth.register'); // تأكد أن الملف موجود في resources/views/auth/register.blade.php
+    }
+
+    public function register(Request $request)
+    {
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|email|unique:users',
+            'password' => 'required|min:6|confirmed',
+        ]);
+
+        User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+        ]);
+
+        return redirect()->route('login')->with('success', 'Account created successfully!');
     }
 }
