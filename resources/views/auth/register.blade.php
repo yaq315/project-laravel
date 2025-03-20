@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register | RumQuest</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/css/select2.min.css" rel="stylesheet" />
+<script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.min.js"></script>
+
     <style>
         /* General Styles */
         body {
@@ -109,6 +112,27 @@
             margin-top: 15px;
             font-size: 14px;
         }
+
+        .input-container select {
+    width: 100%;
+    padding: 12px 45px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    background: rgba(255, 255, 255, 0.9);
+    color: #000;
+    outline: none;
+    appearance: none;
+}
+
+.input-container select:focus {
+    border: 2px solid #cca772;
+}
+
+.select2-container .select2-selection--single {
+    padding-left: 30px;
+}
+
     </style>
 </head>
 <body>
@@ -144,7 +168,13 @@
                 <i class="fas fa-lock"></i>
                 <input type="password" name="password_confirmation" placeholder="Confirm Password" required>
             </div>
-
+            <div class="input-container">
+                <select name="role" class="role-select" required>
+                    <option value="user" data-icon="fas fa-user-shield">User</option>
+                    <option value="admin" data-icon="fas fa-cogs">Admin</option>
+                </select>
+            </div>
+            
             <button type="submit">Register</button>
         </form>
 

@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
 
 class AuthController extends Controller
 {
@@ -20,31 +22,46 @@ class AuthController extends Controller
             'email' => 'required|email',
             'password' => 'required'
         ]);
-
+    
+    
         if (Auth::attempt($credentials)) {
-            return redirect()->route('dashboard')->with('success', 'login is success');
+            $user = Auth::user(); 
+    
+          
+            if ($user->role === 'admin') {
+                return redirect()->route('dashboard');
+            }
+    
+            return redirect()->route('home');
         }
-
-        return back()->withErrors(['error' => 'password error']);
+    
+        
+        return back()->withErrors([
+            'email' => 'The provided credentials do not match our records.',
+        ]);
     }
-
     public function showRegisterForm()
     {
-        return view('auth.register'); // تأكد أن الملف موجود في resources/views/auth/register.blade.php
+        return view('auth.register'); 
     }
 
     public function register(Request $request)
     {
-        $request->validate([
+        $validator = Validator::make($request->all(), [
             'name' => 'required|string|max:255',
-            'email' => 'required|email|unique:users',
-            'password' => 'required|min:6|confirmed',
+            'email' => 'required|string|email|max:255|unique:users',
+            'password' => 'required|string|confirmed|min:8',
+            'role' => 'required|string|in:user,admin',
         ]);
 
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator)->withInput();
+        }
         User::create([
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
+            'role' => $request->role,
         ]);
 
         return redirect()->route('login')->with('success', 'Account created successfully!');

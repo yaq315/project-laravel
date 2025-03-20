@@ -55,7 +55,7 @@ Route::get('/', function () {
 
 Route::get('/dash', function () {
     return view('dashboard');
-})->name('dashboard');
+})->name('dashboard')->middleware('role');
 
 
 // About Us Page
@@ -100,7 +100,7 @@ Route::resource('contact', ContactController::class);
 
 
 Route::get('/login', [AuthController::class, 'showLogin'])->name('login');
-Route::post('/login', [AuthController::class, 'login'])->middleware('checkRole');
+Route::post('/login', [AuthController::class, 'login'])->middleware('role');
 
 Route::get('/register', [AuthController::class, 'showRegisterForm'])->name('register');
 Route::post('/register', [AuthController::class, 'register']);
