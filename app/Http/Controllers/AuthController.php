@@ -24,20 +24,20 @@ class AuthController extends Controller
             'email' => 'required|email',
             'password' => 'required'
         ]);
-
+    
         if (Auth::attempt($credentials)) {
             $user = Auth::user();
-
+    
             // توجيه المستخدم بناءً على الدور
             if ($user->role === 'admin') {
                 return redirect()->route('dashboard'); // لوحة تحكم الأدمن
             } elseif ($user->role === 'super_admin') {
                 return redirect()->route('superadmin'); // لوحة تحكم السوبر أدمن
             } else {
-                return redirect()->route('users.profile'); // صفحة المستخدم
+                return redirect()->route('users.profile'); // صفحة البروفايل للمستخدم العادي
             }
         }
-
+    
         // إذا فشل تسجيل الدخول
         return back()->withErrors([
             'email' => 'The provided credentials do not match our records.',
@@ -74,12 +74,12 @@ class AuthController extends Controller
         return redirect()->route('login')->with('success', 'Account created successfully!');
     }
 
-    // تسجيل الخروج
-    public function logout(Request $request)
-    {
-        Auth::logout();
-        $request->session()->invalidate();
-        $request->session()->regenerateToken();
-        return redirect()->route('home'); // العودة إلى الصفحة الرئيسية
-    }
+     // تسجيل الخروج
+     public function logout(Request $request)
+     {
+         Auth::logout(); // تسجيل خروج المستخدم
+         $request->session()->invalidate(); // إبطال الجلسة
+         $request->session()->regenerateToken(); // إنشاء رمز جديد للجلسة
+         return redirect()->route('home'); // توجيه المستخدم إلى صفحة تسجيل الدخول
+     }
 }

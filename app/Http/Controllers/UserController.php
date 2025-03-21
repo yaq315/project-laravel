@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Support\Facades\Storage;
 class UserController extends Controller
 {
 
@@ -69,15 +70,41 @@ class UserController extends Controller
 
         return redirect()->route('users.index')->with('success', 'User updated successfully.');
     }
-    public function profile()
-     {
-         $user = auth()->user(); // الحصول على بيانات المستخدم الحالي
-         return view('users.profile', compact('user')); // عرض صفحة الملف الشخصي
-     }
+   
 
     public function destroy(User $user)
     {
         $user->delete();
         return redirect()->route('users.index')->with('success', 'User deleted successfully.');
     }
+
+    // عرض صفحة البروفايل
+    public function profile()
+    {
+        $user = auth()->user(); // الحصول على بيانات المستخدم الحالي
+        return view('users.profile', compact('user'));
+    }
+
+    // تحديث صورة البروفايل
+    public function updateProfileImage(Request $request, $id)
+    {
+        $request->validate([
+            'profile_image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+        ]);
+
+        $user = User::findOrFail($id);
+
+        // حذف الصورة القديمة إذا كانت موجودة
+        if ($user->profile_image) {
+            Storage::disk('public')->delete($user->profile_image);
+        }
+
+        // حفظ الصورة الجديدة
+        $profileImagePath = $request->file('profile_image')->store('profile_images', 'public');
+        $user->profile_image = $profileImagePath;
+        $user->save();
+
+        return redirect()->route('users.profile')->with('success', 'Profile image updated successfully.');
+    }
 }
+

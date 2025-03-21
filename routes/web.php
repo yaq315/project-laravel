@@ -6,6 +6,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\SuperAdminController;
+use App\Http\Controllers\AdminController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -113,10 +114,11 @@ Route::post('/register', [AuthController::class, 'register']);
 // });
 
 // Route::post('/superadmin/update-role/{id}', [SuperAdminController::class, 'updateRole'])->name('superadmin.update_role');
-
-
+Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+Route::get('/profile', [UserController::class, 'profile'])->name('users.profile');
+Route::put('/profile/{id}/update-image', [UserController::class, 'updateProfileImage'])->name('users.updateProfileImage');
 Route::middleware(['auth', 'superadmin'])->group(function () {
-    Route::get('/profile', [UserController::class, 'profile'])->name('users.profile');
+  
     Route::get('/superadmin', [SuperAdminController::class, 'manageRoles'])->name('superadmin');
     Route::post('/superadmin/update-role/{id}', [SuperAdminController::class, 'updateRole'])->name('superadmin.update_role');
 });
