@@ -112,8 +112,6 @@
     </style>
 </head>
 <body>
-  
-
     <div class="login-container">
         <h2>Login</h2>
 
@@ -139,8 +137,7 @@
             <button type="submit">Login</button>
         </form>
 
-        <p>Don't have an account? <a href="{{route('register')}}">Create a new account</a></p>
+        <p>Don't have an account? <a href="{{ route('register') }}">Create a new account</a></p>
     </div>
-  
 </body>
 </html>

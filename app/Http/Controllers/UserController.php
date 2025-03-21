@@ -48,6 +48,9 @@ class UserController extends Controller
         return view('users.edit', compact('user'));
     }
 
+     // عرض صفحة الملف الشخصي
+     
+
     public function update(Request $request, User $user)
     {
         $request->validate([
@@ -66,6 +69,11 @@ class UserController extends Controller
 
         return redirect()->route('users.index')->with('success', 'User updated successfully.');
     }
+    public function profile()
+     {
+         $user = auth()->user(); // الحصول على بيانات المستخدم الحالي
+         return view('users.profile', compact('user')); // عرض صفحة الملف الشخصي
+     }
 
     public function destroy(User $user)
     {

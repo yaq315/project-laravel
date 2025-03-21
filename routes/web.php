@@ -49,13 +49,15 @@ Route::get('/web', function () {
 //     return view('contact');
 // });
 // Home Page
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->name('dashboard');
+
+
 Route::get('/', function () {
     return view('home');
 })->name('home');
-
-Route::get('/dash', function () {
-    return view('dashboard');
-})->name('dashboard')->middleware('role');
 
 
 // About Us Page
@@ -100,7 +102,11 @@ Route::resource('contact', ContactController::class);
 
 
 Route::get('/login', [AuthController::class, 'showLogin'])->name('login');
-Route::post('/login', [AuthController::class, 'login'])->middleware('role');
+Route::post('/login', [AuthController::class, 'login']);
 
 Route::get('/register', [AuthController::class, 'showRegisterForm'])->name('register');
 Route::post('/register', [AuthController::class, 'register']);
+
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [UserController::class, 'profile'])->name('users.profile');
+});

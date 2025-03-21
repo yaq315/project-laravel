@@ -168,12 +168,7 @@
                 <i class="fas fa-lock"></i>
                 <input type="password" name="password_confirmation" placeholder="Confirm Password" required>
             </div>
-            <div class="input-container">
-                <select name="role" class="role-select" required>
-                    <option value="user" data-icon="fas fa-user-shield">User</option>
-                    <option value="admin" data-icon="fas fa-cogs">Admin</option>
-                </select>
-            </div>
+          
             
             <button type="submit">Register</button>
         </form>
