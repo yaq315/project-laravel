@@ -5,6 +5,7 @@ use App\Http\Controllers\AdventureController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\SuperAdminController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -107,6 +108,15 @@ Route::post('/login', [AuthController::class, 'login']);
 Route::get('/register', [AuthController::class, 'showRegisterForm'])->name('register');
 Route::post('/register', [AuthController::class, 'register']);
 
-Route::middleware('auth')->group(function () {
+// Route::middleware('auth')->group(function () {
+//     Route::get('/profile', [UserController::class, 'profile'])->name('users.profile');
+// });
+
+// Route::post('/superadmin/update-role/{id}', [SuperAdminController::class, 'updateRole'])->name('superadmin.update_role');
+
+
+Route::middleware(['auth', 'superadmin'])->group(function () {
     Route::get('/profile', [UserController::class, 'profile'])->name('users.profile');
+    Route::get('/superadmin', [SuperAdminController::class, 'manageRoles'])->name('superadmin');
+    Route::post('/superadmin/update-role/{id}', [SuperAdminController::class, 'updateRole'])->name('superadmin.update_role');
 });

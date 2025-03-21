@@ -32,7 +32,7 @@ class AuthController extends Controller
             if ($user->role === 'admin') {
                 return redirect()->route('dashboard'); // لوحة تحكم الأدمن
             } elseif ($user->role === 'super_admin') {
-                return redirect()->route('dashboard'); // لوحة تحكم السوبر أدمن
+                return redirect()->route('superadmin'); // لوحة تحكم السوبر أدمن
             } else {
                 return redirect()->route('users.profile'); // صفحة المستخدم
             }
@@ -57,21 +57,20 @@ class AuthController extends Controller
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|confirmed|min:8',
-            'role' => 'required|string|in:user,admin,super_admin', // إضافة super_admin كدور
         ]);
-
+    
         if ($validator->fails()) {
             return redirect()->back()->withErrors($validator)->withInput();
         }
-
-        // إنشاء المستخدم
+    
+        // إنشاء المستخدم مع الدور الافتراضي "user"
         User::create([
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
-            'role' => $request->role,
+            'role' => 'user', // الدور الافتراضي
         ]);
-
+    
         return redirect()->route('login')->with('success', 'Account created successfully!');
     }
 
@@ -81,6 +80,6 @@ class AuthController extends Controller
         Auth::logout();
         $request->session()->invalidate();
         $request->session()->regenerateToken();
-        return redirect()->route('users.profile'); // العودة إلى الصفحة الرئيسية
+        return redirect()->route('home'); // العودة إلى الصفحة الرئيسية
     }
 }
