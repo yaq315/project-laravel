@@ -3,17 +3,22 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Database\Eloquent\Model;
 
-class User extends Authenticatable
+class Adventure extends Model
 {
     use HasFactory;
 
     protected $fillable = [
         'name',
-        'email',
-        'password',
-        'profile_image',
+        'description',
+        'price',
+        'image',
+        'type',
+        'max_group_size',
+        'start_date',
+        'end_date',
+        'duration',
     ];
 
     // العلاقة مع نموذج الحجز

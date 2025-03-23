@@ -26,391 +26,267 @@
   <!-- Navbar -->
 @include('layouts.navbardash')
   <!-- End Navbar -->
-  <div class="container-fluid py-4">
+  
 
 
 
 
+
+
+  <div class="container">
     <div class="row">
-      <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
-        <div class="card">
-          <div class="card-body p-3">
-            <div class="row">
-              <div class="col-8">
-                <div class="numbers">
-                  <p class="text-sm mb-0 text-uppercase font-weight-bold">Today's Money</p>
-                  <h5 class="font-weight-bolder">
-                    $53,000
-                  </h5>
-                  <p class="mb-0">
-                    <span class="text-success text-sm font-weight-bolder">+55%</span>
-                    since yesterday
-                  </p>
+       
+        <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
+            <div class="card">
+                <div class="card-body p-3">
+                    <div class="row">
+                        <div class="col-8">
+                            <div class="numbers">
+                                <p class="text-sm mb-0 text-uppercase font-weight-bold">Total Users</p>
+                                <h5 class="font-weight-bolder">
+                                    {{ $totalUsers }}
+                                </h5>
+                                <p class="mb-0">
+                                    <span class="text-success text-sm font-weight-bolder">+{{ $userGrowth }}%</span>
+                                    since last month
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-4 text-end">
+                            <div class="icon icon-shape bg-gradient-primary shadow-primary text-center rounded-circle">
+                                <i class="ni ni-single-02 text-lg opacity-10" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
-              <div class="col-4 text-end">
-                <div class="icon icon-shape bg-gradient-primary shadow-primary text-center rounded-circle">
-                  <i class="ni ni-money-coins text-lg opacity-10" aria-hidden="true"></i>
-                </div>
-              </div>
             </div>
-          </div>
         </div>
-      </div>
-      <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
-        <div class="card">
-          <div class="card-body p-3">
-            <div class="row">
-              <div class="col-8">
-                <div class="numbers">
-                  <p class="text-sm mb-0 text-uppercase font-weight-bold">Today's Users</p>
-                  <h5 class="font-weight-bolder">
-                    2,300
-                  </h5>
-                  <p class="mb-0">
-                    <span class="text-success text-sm font-weight-bolder">+3%</span>
-                    since last week
-                  </p>
+
+       
+        <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
+            <div class="card">
+                <div class="card-body p-3">
+                    <div class="row">
+                        <div class="col-8">
+                            <div class="numbers">
+                                <p class="text-sm mb-0 text-uppercase font-weight-bold">Total Admins</p>
+                                <h5 class="font-weight-bolder">
+                                    {{ $totalAdmins }}
+                                </h5>
+                                <p class="mb-0">
+                                    <span class="text-success text-sm font-weight-bolder">+{{ $adminGrowth }}%</span>
+                                    since last month
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-4 text-end">
+                            <div class="icon icon-shape bg-gradient-danger shadow-danger text-center rounded-circle">
+                                <i class="ni ni-badge text-lg opacity-10" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
-              <div class="col-4 text-end">
-                <div class="icon icon-shape bg-gradient-danger shadow-danger text-center rounded-circle">
-                  <i class="ni ni-world text-lg opacity-10" aria-hidden="true"></i>
-                </div>
-              </div>
             </div>
-          </div>
         </div>
-      </div>
-      <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
-        <div class="card">
-          <div class="card-body p-3">
-            <div class="row">
-              <div class="col-8">
-                <div class="numbers">
-                  <p class="text-sm mb-0 text-uppercase font-weight-bold">New Clients</p>
-                  <h5 class="font-weight-bolder">
-                    +3,462
-                  </h5>
-                  <p class="mb-0">
-                    <span class="text-danger text-sm font-weight-bolder">-2%</span>
-                    since last quarter
-                  </p>
+
+        <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
+            <div class="card">
+                <div class="card-body p-3">
+                    <div class="row">
+                        <div class="col-8">
+                            <div class="numbers">
+                                <p class="text-sm mb-0 text-uppercase font-weight-bold">Today's Bookings</p>
+                                <h5 class="font-weight-bolder">
+                                    {{ $todayBookings }}
+                                </h5>
+                                <p class="mb-0">
+                                    <span class="text-success text-sm font-weight-bolder">+{{ $bookingGrowthToday }}%</span>
+                                    since yesterday
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-4 text-end">
+                            <div class="icon icon-shape bg-gradient-success shadow-success text-center rounded-circle">
+                                <i class="ni ni-calendar-grid-58 text-lg opacity-10" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
-              <div class="col-4 text-end">
-                <div class="icon icon-shape bg-gradient-success shadow-success text-center rounded-circle">
-                  <i class="ni ni-paper-diploma text-lg opacity-10" aria-hidden="true"></i>
-                </div>
-              </div>
             </div>
-          </div>
         </div>
-      </div>
-      <div class="col-xl-3 col-sm-6">
-        <div class="card">
-          <div class="card-body p-3">
-            <div class="row">
-              <div class="col-8">
-                <div class="numbers">
-                  <p class="text-sm mb-0 text-uppercase font-weight-bold">Sales</p>
-                  <h5 class="font-weight-bolder">
-                    $103,430
-                  </h5>
-                  <p class="mb-0">
-                    <span class="text-success text-sm font-weight-bolder">+5%</span> than last month
-                  </p>
+
+       
+        <div class="col-xl-3 col-sm-6">
+            <div class="card">
+                <div class="card-body p-3">
+                    <div class="row">
+                        <div class="col-8">
+                            <div class="numbers">
+                                <p class="text-sm mb-0 text-uppercase font-weight-bold">This Month's Bookings</p>
+                                <h5 class="font-weight-bolder">
+                                    {{ $monthlyBookings }}
+                                </h5>
+                                <p class="mb-0">
+                                    <span class="text-success text-sm font-weight-bolder">+{{ $bookingGrowthMonthly }}%</span>
+                                    since last month
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-4 text-end">
+                            <div class="icon icon-shape bg-gradient-warning shadow-warning text-center rounded-circle">
+                                <i class="ni ni-calendar-grid-58 text-lg opacity-10" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
-              <div class="col-4 text-end">
-                <div class="icon icon-shape bg-gradient-warning shadow-warning text-center rounded-circle">
-                  <i class="ni ni-cart text-lg opacity-10" aria-hidden="true"></i>
-                </div>
-              </div>
             </div>
-          </div>
         </div>
-      </div>
     </div>
-
-
 
 
     <div class="row mt-4">
       <div class="col-lg-7 mb-lg-0 mb-4">
-        <div class="card z-index-2 h-100">
-          <div class="card-header pb-0 pt-3 bg-transparent">
-            <h6 class="text-capitalize">Sales overview</h6>
-            <p class="text-sm mb-0">
-              <i class="fa fa-arrow-up text-success"></i>
-              <span class="font-weight-bold">4% more</span> in 2021
-            </p>
+          <div class="card z-index-2"> 
+              <div class="card-header pb-0 pt-3 bg-transparent">
+                  <h6 class="text-capitalize">Adventures Bookings Overview</h6>
+                  <p class="text-sm mb-0">
+                      <i class="fa fa-arrow-up text-success"></i>
+                      <span class="font-weight-bold">10% more</span> bookings this year
+                  </p>
+              </div>
+              <div class="card-body p-3">
+                  <div class="chart">
+                      <canvas id="bookingsChart" class="chart-canvas" height="200"></canvas> 
+                  </div>
+              </div>
           </div>
-          <div class="card-body p-3">
-            <div class="chart">
-              <canvas id="chart-line" class="chart-canvas" height="300"></canvas>
-            </div>
-          </div>
-        </div>
       </div>
       <div class="col-lg-5">
-        <div class="card card-carousel overflow-hidden h-100 p-0">
-          <div id="carouselExampleCaptions" class="carousel slide h-100" data-bs-ride="carousel">
-            <div class="carousel-inner border-radius-lg h-100">
-              <div class="carousel-item h-100 active" style="background-image: url('../assets/img/carousel-1.jpg');
-    background-size: cover;">
-                <div class="carousel-caption d-none d-md-block bottom-0 text-start start-0 ms-5">
-                  <div class="icon icon-shape icon-sm bg-white text-center border-radius-md mb-3">
-                    <i class="ni ni-camera-compact text-dark opacity-10"></i>
+          <div class="card card-carousel overflow-hidden p-0" style="height: 425px;"> 
+              <div id="carouselExampleCaptions" class="carousel slide h-100" data-bs-ride="carousel">
+                  <div class="carousel-inner border-radius-lg h-100">
+                      <div class="carousel-item h-100 active" style="background-image: url('../assets/img/12.jpg'); background-size: cover;">
+                          <div class="carousel-caption d-none d-md-block bottom-0 text-start start-0 ms-5">
+                              <div class="icon icon-shape icon-sm bg-white text-center border-radius-md mb-3">
+                                  <i class="ni ni-camera-compact text-dark opacity-10"></i>
+                              </div>
+                              <h5 class="text-white mb-1">Explore New Adventures</h5>
+                              <p>Book your next adventure and experience the thrill of the unknown.</p>
+                          </div>
+                      </div>
+                      <div class="carousel-item h-100" style="background-image: url('../assets/img/imag3.webp'); background-size: cover;">
+                          <div class="carousel-caption d-none d-md-block bottom-0 text-start start-0 ms-5">
+                              <div class="icon icon-shape icon-sm bg-white text-center border-radius-md mb-3">
+                                  <i class="ni ni-bulb-61 text-dark opacity-10"></i>
+                              </div>
+                              <h5 class="text-white mb-1">Discover Hidden Gems</h5>
+                              <p>Find the best spots for your next adventure with our expert guides.</p>
+                          </div>
+                      </div>
+                      <div class="carousel-item h-100" style="background-image: url('../assets/img/safari.jpg'); background-size: cover;">
+                          <div class="carousel-caption d-none d-md-block bottom-0 text-start start-0 ms-5">
+                              <div class="icon icon-shape icon-sm bg-white text-center border-radius-md mb-3">
+                                  <i class="ni ni-trophy text-dark opacity-10"></i>
+                              </div>
+                              <h5 class="text-white mb-1">Share Your Experience</h5>
+                              <p>Tell us about your adventures and inspire others to explore.</p>
+                          </div>
+                      </div>
                   </div>
-                  <h5 class="text-white mb-1">Get started with Argon</h5>
-                  <p>There’s nothing I really wanted to do in life that I wasn’t able to get good at.</p>
-                </div>
+                  <button class="carousel-control-prev w-5 me-3" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Previous</span>
+                  </button>
+                  <button class="carousel-control-next w-5 me-3" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Next</span>
+                  </button>
               </div>
-              <div class="carousel-item h-100" style="background-image: url('../assets/img/carousel-2.jpg');
-    background-size: cover;">
-                <div class="carousel-caption d-none d-md-block bottom-0 text-start start-0 ms-5">
-                  <div class="icon icon-shape icon-sm bg-white text-center border-radius-md mb-3">
-                    <i class="ni ni-bulb-61 text-dark opacity-10"></i>
-                  </div>
-                  <h5 class="text-white mb-1">Faster way to create web pages</h5>
-                  <p>That’s my skill. I’m not really specifically talented at anything except for the ability to learn.</p>
+          </div>
+      </div>
+  </div>
+
+
+    
+  <div class="card mt-4">
+    <div class="card-header">
+        <h4 class="card-title">Booking Management</h4>
+        <form action="{{ route('bookings.filter') }}" method="GET">
+            <div class="row">
+                <div class="col-md-3">
+                    <label for="status">Status</label>
+                    <select name="status" id="status" class="form-control">
+                        <option value="">All</option>
+                        <option value="confirmed">Confirmed</option>
+                        <option value="in_progress">In Progress</option>
+                        <option value="rejected">Rejected</option>
+                    </select>
                 </div>
-              </div>
-              <div class="carousel-item h-100" style="background-image: url('../assets/img/carousel-3.jpg');
-    background-size: cover;">
-                <div class="carousel-caption d-none d-md-block bottom-0 text-start start-0 ms-5">
-                  <div class="icon icon-shape icon-sm bg-white text-center border-radius-md mb-3">
-                    <i class="ni ni-trophy text-dark opacity-10"></i>
-                  </div>
-                  <h5 class="text-white mb-1">Share with us your design tips!</h5>
-                  <p>Don’t be afraid to be wrong because you can’t learn anything from a compliment.</p>
+                <div class="col-md-3">
+                    <label for="start_date">Start Date</label>
+                    <input type="date" name="start_date" id="start_date" class="form-control">
                 </div>
-              </div>
+                <div class="col-md-3">
+                    <label for="end_date">End Date</label>
+                    <input type="date" name="end_date" id="end_date" class="form-control">
+                </div>
+                <div class="col-md-3">
+                    <button type="submit" class="btn btn-primary mt-4">Filter</button>
+                </div>
             </div>
-            <button class="carousel-control-prev w-5 me-3" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next w-5 me-3" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
-            </button>
-          </div>
-        </div>
-      </div>
+        </form>
     </div>
-
-
-
-    <div class="row mt-4">
-      <div class="col-lg-7 mb-lg-0 mb-4">
-        <div class="card ">
-          <div class="card-header pb-0 p-3">
-            <div class="d-flex justify-content-between">
-              <h6 class="mb-2">Sales by Country</h6>
+    <div class="card-body">
+        @if(session('success'))
+            <div class="alert alert-success">
+                {{ session('success') }}
             </div>
-          </div>
-          <div class="table-responsive">
-            <table class="table align-items-center ">
-              <tbody>
+        @endif
+        <table class="table table-bordered">
+            <thead>
                 <tr>
-                  <td class="w-30">
-                    <div class="d-flex px-2 py-1 align-items-center">
-                      <div>
-                        <img src="../assets/img/icons/flags/US.png" alt="Country flag">
-                      </div>
-                      <div class="ms-4">
-                        <p class="text-xs font-weight-bold mb-0">Country:</p>
-                        <h6 class="text-sm mb-0">United States</h6>
-                      </div>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="text-center">
-                      <p class="text-xs font-weight-bold mb-0">Sales:</p>
-                      <h6 class="text-sm mb-0">2500</h6>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="text-center">
-                      <p class="text-xs font-weight-bold mb-0">Value:</p>
-                      <h6 class="text-sm mb-0">$230,900</h6>
-                    </div>
-                  </td>
-                  <td class="align-middle text-sm">
-                    <div class="col text-center">
-                      <p class="text-xs font-weight-bold mb-0">Bounce:</p>
-                      <h6 class="text-sm mb-0">29.9%</h6>
-                    </div>
-                  </td>
+                    <th>ID</th>
+                    <th>User</th>
+                    <th>Adventure</th>
+                    <th>Start Date</th>
+                    <th>End Date</th>
+                    <th>Status</th>
+                    <th>Actions</th>
                 </tr>
-                <tr>
-                  <td class="w-30">
-                    <div class="d-flex px-2 py-1 align-items-center">
-                      <div>
-                        <img src="../assets/img/icons/flags/DE.png" alt="Country flag">
-                      </div>
-                      <div class="ms-4">
-                        <p class="text-xs font-weight-bold mb-0">Country:</p>
-                        <h6 class="text-sm mb-0">Germany</h6>
-                      </div>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="text-center">
-                      <p class="text-xs font-weight-bold mb-0">Sales:</p>
-                      <h6 class="text-sm mb-0">3.900</h6>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="text-center">
-                      <p class="text-xs font-weight-bold mb-0">Value:</p>
-                      <h6 class="text-sm mb-0">$440,000</h6>
-                    </div>
-                  </td>
-                  <td class="align-middle text-sm">
-                    <div class="col text-center">
-                      <p class="text-xs font-weight-bold mb-0">Bounce:</p>
-                      <h6 class="text-sm mb-0">40.22%</h6>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="w-30">
-                    <div class="d-flex px-2 py-1 align-items-center">
-                      <div>
-                        <img src="../assets/img/icons/flags/GB.png" alt="Country flag">
-                      </div>
-                      <div class="ms-4">
-                        <p class="text-xs font-weight-bold mb-0">Country:</p>
-                        <h6 class="text-sm mb-0">Great Britain</h6>
-                      </div>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="text-center">
-                      <p class="text-xs font-weight-bold mb-0">Sales:</p>
-                      <h6 class="text-sm mb-0">1.400</h6>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="text-center">
-                      <p class="text-xs font-weight-bold mb-0">Value:</p>
-                      <h6 class="text-sm mb-0">$190,700</h6>
-                    </div>
-                  </td>
-                  <td class="align-middle text-sm">
-                    <div class="col text-center">
-                      <p class="text-xs font-weight-bold mb-0">Bounce:</p>
-                      <h6 class="text-sm mb-0">23.44%</h6>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="w-30">
-                    <div class="d-flex px-2 py-1 align-items-center">
-                      <div>
-                        <img src="../assets/img/icons/flags/BR.png" alt="Country flag">
-                      </div>
-                      <div class="ms-4">
-                        <p class="text-xs font-weight-bold mb-0">Country:</p>
-                        <h6 class="text-sm mb-0">Brasil</h6>
-                      </div>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="text-center">
-                      <p class="text-xs font-weight-bold mb-0">Sales:</p>
-                      <h6 class="text-sm mb-0">562</h6>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="text-center">
-                      <p class="text-xs font-weight-bold mb-0">Value:</p>
-                      <h6 class="text-sm mb-0">$143,960</h6>
-                    </div>
-                  </td>
-                  <td class="align-middle text-sm">
-                    <div class="col text-center">
-                      <p class="text-xs font-weight-bold mb-0">Bounce:</p>
-                      <h6 class="text-sm mb-0">32.14%</h6>
-                    </div>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-5">
-        <div class="card">
-          <div class="card-header pb-0 p-3">
-            <h6 class="mb-0">Categories</h6>
-          </div>
-          <div class="card-body p-3">
-            <ul class="list-group">
-              <li class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
-                <div class="d-flex align-items-center">
-                  <div class="icon icon-shape icon-sm me-3 bg-gradient-dark shadow text-center">
-                    <i class="ni ni-mobile-button text-white opacity-10"></i>
-                  </div>
-                  <div class="d-flex flex-column">
-                    <h6 class="mb-1 text-dark text-sm">Devices</h6>
-                    <span class="text-xs">250 in stock, <span class="font-weight-bold">346+ sold</span></span>
-                  </div>
-                </div>
-                <div class="d-flex">
-                  <button class="btn btn-link btn-icon-only btn-rounded btn-sm text-dark icon-move-right my-auto"><i class="ni ni-bold-right" aria-hidden="true"></i></button>
-                </div>
-              </li>
-              <li class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
-                <div class="d-flex align-items-center">
-                  <div class="icon icon-shape icon-sm me-3 bg-gradient-dark shadow text-center">
-                    <i class="ni ni-tag text-white opacity-10"></i>
-                  </div>
-                  <div class="d-flex flex-column">
-                    <h6 class="mb-1 text-dark text-sm">Tickets</h6>
-                    <span class="text-xs">123 closed, <span class="font-weight-bold">15 open</span></span>
-                  </div>
-                </div>
-                <div class="d-flex">
-                  <button class="btn btn-link btn-icon-only btn-rounded btn-sm text-dark icon-move-right my-auto"><i class="ni ni-bold-right" aria-hidden="true"></i></button>
-                </div>
-              </li>
-              <li class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
-                <div class="d-flex align-items-center">
-                  <div class="icon icon-shape icon-sm me-3 bg-gradient-dark shadow text-center">
-                    <i class="ni ni-box-2 text-white opacity-10"></i>
-                  </div>
-                  <div class="d-flex flex-column">
-                    <h6 class="mb-1 text-dark text-sm">Error logs</h6>
-                    <span class="text-xs">1 is active, <span class="font-weight-bold">40 closed</span></span>
-                  </div>
-                </div>
-                <div class="d-flex">
-                  <button class="btn btn-link btn-icon-only btn-rounded btn-sm text-dark icon-move-right my-auto"><i class="ni ni-bold-right" aria-hidden="true"></i></button>
-                </div>
-              </li>
-              <li class="list-group-item border-0 d-flex justify-content-between ps-0 border-radius-lg">
-                <div class="d-flex align-items-center">
-                  <div class="icon icon-shape icon-sm me-3 bg-gradient-dark shadow text-center">
-                    <i class="ni ni-satisfied text-white opacity-10"></i>
-                  </div>
-                  <div class="d-flex flex-column">
-                    <h6 class="mb-1 text-dark text-sm">Happy users</h6>
-                    <span class="text-xs font-weight-bold">+ 430</span>
-                  </div>
-                </div>
-                <div class="d-flex">
-                  <button class="btn btn-link btn-icon-only btn-rounded btn-sm text-dark icon-move-right my-auto"><i class="ni ni-bold-right" aria-hidden="true"></i></button>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
+            </thead>
+            <tbody>
+                @foreach ($bookings as $booking)
+                    <tr>
+                        <td>{{ $booking->id }}</td>
+                        <td>{{ $booking->user->name }}</td>
+                        <td>{{ $booking->adventure->name }}</td>
+                        <td>{{ $booking->start_date }}</td>
+                        <td>{{ $booking->end_date }}</td>
+                        <td>{{ ucfirst($booking->status) }}</td>
+                        <td>
+                            <a href="{{ route('bookings.edit', $booking->id) }}" class="btn btn-sm btn-primary">Edit</a>
+                            <form action="{{ route('bookings.destroy', $booking->id) }}" method="POST" style="display: inline;">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure you want to delete this booking?')">Delete</button>
+                            </form>
+                        </td>
+                    </tr>
+                @endforeach
+            </tbody>
+        </table>
     </div>
+</div>
+</div>
+
+  
+
+
+
+
+
+
+  
 
 
 
