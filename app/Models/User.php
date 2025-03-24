@@ -4,10 +4,13 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
 
 class User extends Authenticatable
 {
     use HasFactory;
+
+    use Notifiable;
 
     protected $fillable = [
         'name',
@@ -15,6 +18,11 @@ class User extends Authenticatable
         'password',
         'profile_image',
     ];
+
+    public function routeNotificationForMail()
+{
+    return $this->email;
+}
 
     // العلاقة مع نموذج الحجز
     public function bookings()

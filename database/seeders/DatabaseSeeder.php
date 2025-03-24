@@ -16,9 +16,13 @@ class DatabaseSeeder extends Seeder
         $this->call([
             AdventuresTableSeeder::class,
             UsersTableSeeder::class,
+            SuperAdminSeeder::class,
             BookingSeeder::class,
             PaymentSeeder::class,
             ReviewSeeder::class,
+            BookingRemindersSeeder::class,
+            NotificationsTableSeeder::class,
+
         ]);
     }
 }

@@ -19,6 +19,7 @@ return new class extends Migration
         $table->date('end_date'); 
         $table->integer('group_size');
         $table->string('status')->default('pending'); 
+        $table->integer('reminder_preference')->default(24);
         $table->timestamps();
     });
     }

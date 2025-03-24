@@ -9,7 +9,10 @@ class AdventureController extends Controller
 {
     public function index()
     {
-        $adventures = Adventure::all();
+        $adventures = Adventure::whereDoesntHave('bookings', function($query) {
+            $query->where('end_date', '>', now());
+        })->get();
+        
         return view('booking', compact('adventures'));
     }
 
