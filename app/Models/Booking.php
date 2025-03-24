@@ -29,4 +29,15 @@ class Booking extends Model
     {
         return $this->belongsTo(Adventure::class);
     }
+
+    public function reviews()
+{
+    return $this->hasMany(Review::class);
+}
+
+public function payment()
+{
+    return $this->hasOne(payment::class);
+}
+
 }

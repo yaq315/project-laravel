@@ -26,4 +26,5 @@ class Adventure extends Model
     {
         return $this->hasMany(Booking::class);
     }
+  
 }

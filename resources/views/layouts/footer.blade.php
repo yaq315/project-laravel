@@ -4,10 +4,10 @@
       <div class="col-xl-2 col-sm-6 mb-4 mb-xl-0 single-footer-widget">
         <h4>Our Adventures</h4>
         <ul>
-          <li><a href="{{ route('booking') }}">Jeep Tours</a></li>
-          <li><a href="{{ route('booking') }}">Desert Camping</a></li>
-          <li><a href="{{ route('booking') }}">Hiking</a></li>
-          <li><a href="{{ route('booking') }}">Rock Climbing</a></li>
+          <li><a href="{{ route('booking.index') }}">Jeep Tours</a></li>
+          <li><a href="{{ route('booking.index') }}">Desert Camping</a></li>
+          <li><a href="{{ route('booking.index') }}">Hiking</a></li>
+          <li><a href="{{ route('booking.index') }}">Rock Climbing</a></li>
         </ul>
       </div>
       <div class="col-xl-2 col-sm-6 mb-4 mb-xl-0 single-footer-widget">

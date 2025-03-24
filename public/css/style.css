@@ -638,8 +638,7 @@ button {
     padding-left: 18px;
     color: #999999;
     font-size: 14px;
-    -webkit-appearance: none;
-    -moz-appearance: none; }
+  
     .form-select-custom select:focus {
       outline: 0;
       box-shadow: none; }
@@ -734,7 +733,7 @@ button {
     border-bottom: 15px solid #ffffff;
     border-left: 500px solid rgba(255, 255, 255, 0.13);
     /* Maintain smooth edge of triangle in FF */
-    -moz-transform: scale(0.9999); }
+   }
   .testi-carousel__item:hover {
     box-shadow: 0px 10px 20px 0px rgba(153, 153, 153, 0.2);
     background: #fff; }
@@ -1899,3 +1898,4 @@ button {
     color: #777; }
 
 /*============ End Blog Single Styles  =============*/
+  }

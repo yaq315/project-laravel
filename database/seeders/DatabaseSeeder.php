@@ -17,6 +17,8 @@ class DatabaseSeeder extends Seeder
             AdventuresTableSeeder::class,
             UsersTableSeeder::class,
             BookingSeeder::class,
+            PaymentSeeder::class,
+            ReviewSeeder::class,
         ]);
     }
 }

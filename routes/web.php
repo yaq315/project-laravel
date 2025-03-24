@@ -11,6 +11,11 @@ use App\Http\Controllers\BookingController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\ReviewController;
+
+
+
+use App\Http\Controllers\PaymentController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -84,7 +89,7 @@ Route::get('/blog', function () {
 
 // FAQ Page
 Route::get('/faq', function () {
-    return view('faq');
+    return view('FAQ');
 })->name('faq');
 
 // Contact Us Page
@@ -138,7 +143,7 @@ Route::middleware(['auth', 'superadmin'])->group(function () {
 // Route::get('/search-adventures', [AdventureController::class, 'search'])->name('search.adventures');
 
 
-// Route::get('/profile/{id}', [ProfileController::class, 'profilePage'])->name('profile');
+Route::get('/profile/{id}', [ProfileController::class, 'profilePage'])->name('profile');
 
 
 Route::get('/adventures', [AdventureController::class, 'index'])->name('adventures.index');
@@ -172,3 +177,33 @@ Route::put('/bookings/{id}', [DashboardController::class, 'update'])->name('book
 
 // حذف الحجز
 Route::delete('/bookings/{id}', [DashboardController::class, 'destroy'])->name('bookings.destroy');
+
+
+// Routes for Booking
+Route::get('/booking', [BookingController::class, 'index'])->name('booking.index');
+Route::post('/book/{adventure}', [BookingController::class, 'bookAdventure'])->name('book.adventure')->middleware('auth');
+
+
+
+
+// Routes for Payment
+Route::middleware(['auth'])->group(function () {
+    Route::get('/payments', [PaymentController::class, 'index'])->name('payments.index');
+    Route::get('/payment/{payment}', [PaymentController::class, 'show'])->name('payment.show');
+    Route::post('/payment/{payment}/process', [PaymentController::class, 'process'])->name('payment.process');
+    Route::get('/payment/{payment}/success', [PaymentController::class, 'success'])->name('payments.success');
+    Route::get('/payment/{payment}/invoice', [PaymentController::class, 'generateInvoice'])->name('payments.invoice');
+});
+
+   // Admin routes
+   Route::middleware(['admin'])->group(function () {
+    Route::post('/payment/{payment}/confirm', [PaymentController::class, 'confirm'])->name('payment.confirm');
+});
+
+
+
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('/reviews/{booking?}', [ReviewController::class, 'index'])->name('reviews.index');
+    Route::post('/reviews/{booking}', [ReviewController::class, 'store'])->name('reviews.store');
+});

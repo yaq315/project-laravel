@@ -17,6 +17,8 @@
         <!-- رابط Animate.css -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 
+        <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+
         <meta name="user-logged-in" content="{{ auth()->check() ? 'true' : 'false' }}">
     </head>
     <style>
@@ -39,5 +41,19 @@
         @yield('content')
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        function checkAuth(event) {
+            @auth
+                return true;
+            @else
+                event.preventDefault();
+                if(confirm('You need to login to book an adventure. Would you like to login now?')) {
+                    window.location.href = "{{ route('login') }}";
+                }
+                return false;
+            @endauth
+        }
+        </script>
 </body>
 </html>

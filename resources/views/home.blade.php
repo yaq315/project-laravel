@@ -14,7 +14,7 @@
         <div class="text-center">
           <h4>Experience the Magic of Wadi Rum</h4>
           <h1>Adventure <em>Awaits</em> You</h1>
-          <a class="button home-banner-btn" href="{{ route('booking') }}">Book Your Adventure</a>
+          <a class="button home-banner-btn" href="{{ route('booking.index') }}">Book Your Adventure</a>
         </div>
       </div>
     </div>
@@ -132,7 +132,7 @@
               <h2 class="mb-4"><span class="d-block">Welcome</span> to RumQuest</h2>
               <p>Discover the breathtaking beauty and thrilling adventures of Wadi Rum. Whether you're seeking a serene escape or an adrenaline-packed journey, RumQuest offers unforgettable experiences in the heart of the desert.</p>
               <p>From jeep tours and camping under the stars to hiking and rock climbing, our adventures are designed to immerse you in the magic of Wadi Rum.</p>
-              <a class="button button--active home-banner-btn mt-4" href="{{ route('booking') }}">Explore Adventures</a>
+              <a class="button button--active home-banner-btn mt-4" href="{{ route('booking.index') }}">Explore Adventures</a>
             </div>
           </div>
         </div>
