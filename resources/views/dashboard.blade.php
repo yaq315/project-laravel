@@ -217,9 +217,10 @@
                     <label for="status">Status</label>
                     <select name="status" id="status" class="form-control">
                         <option value="">All</option>
-                        <option value="confirmed">Confirmed</option>
-                        <option value="in_progress">In Progress</option>
-                        <option value="rejected">Rejected</option>
+                        <option value="pending" {{ request('status') == 'pending' ? 'selected' : '' }}>Pending</option>
+                        <option value="confirmed" {{ request('status') == 'confirmed' ? 'selected' : '' }}>Confirmed</option>
+                        <option value="completed" {{ request('status') == 'completed' ? 'selected' : '' }}>Completed</option>
+                        <option value="cancelled" {{ request('status') == 'cancelled' ? 'selected' : '' }}>Cancelled</option>
                     </select>
                 </div>
                 <div class="col-md-3">

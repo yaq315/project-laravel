@@ -8,12 +8,12 @@
   document.addEventListener('DOMContentLoaded', function () {
       const ctx = document.getElementById('bookingsChart').getContext('2d');
       const bookingsChart = new Chart(ctx, {
-          type: 'bar', // يمكنك تغيير النوع إلى 'line' إذا كنت تفضل رسمًا بيانيًا خطيًا
+          type: 'bar', 
           data: {
-              labels: ['Hiking', 'Scuba Diving', 'Rock Climbing', 'Safari', 'Paragliding', 'Skiing'],
+              labels: ['Hiking', 'Rock Climbing', 'Safari', 'Paragliding', 'Skiing'],
               datasets: [{
                   label: 'Number of Bookings',
-                  data: [120, 90, 75, 60, 45, 30], // بيانات الحجوزات لكل مغامرة
+                  data: [120, 75, 60, 45, 30], 
                   backgroundColor: [
                       'rgba(75, 192, 192, 0.6)',
                       'rgba(153, 102, 255, 0.6)',

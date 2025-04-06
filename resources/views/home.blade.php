@@ -158,7 +158,7 @@
             </div>
             <div class="card-body d-flex flex-column">
               <h3 class="card-explore__price">$100.00 <sub>/ Per Person</sub></h3>
-              <h4 class="card-explore__title"><a href="#">Jeep Tour</a></h4>
+              <h4 class="card-explore__title">Jeep Tour</h4>
               <p class="flex-grow-1">Explore the stunning desert landscapes of Wadi Rum in a thrilling jeep tour. Perfect for adventure seekers!</p>
               <a class="card-explore__link" href="">Book Now <i class="ti-arrow-right"></i></a>
             </div>
@@ -172,7 +172,7 @@
             </div>
             <div class="card-body d-flex flex-column">
               <h3 class="card-explore__price">$150.00 <sub>/ Per Person</sub></h3>
-              <h4 class="card-explore__title"><a href="#">Desert Camping</a></h4>
+              <h4 class="card-explore__title">Desert Camping</h4>
               <p class="flex-grow-1">Spend a night under the stars in a traditional Bedouin camp. Experience the magic of the desert.</p>
               <a class="card-explore__link" href="">Book Now <i class="ti-arrow-right"></i></a>
             </div>
@@ -186,7 +186,7 @@
             </div>
             <div class="card-body d-flex flex-column">
               <h3 class="card-explore__price">$80.00 <sub>/ Per Person</sub></h3>
-              <h4 class="card-explore__title"><a href="#">Hiking Adventure</a></h4>
+              <h4 class="card-explore__title">Hiking Adventure</h4>
               <p class="flex-grow-1">Discover hidden trails and breathtaking views with our guided hiking tours in Wadi Rum.</p>
               <a class="card-explore__link" href="">Book Now <i class="ti-arrow-right"></i></a>
             </div>
@@ -387,4 +387,6 @@
       </div>
     </section>
   @endsection
+
+
 

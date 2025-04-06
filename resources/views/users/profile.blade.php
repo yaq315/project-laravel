@@ -10,7 +10,7 @@
     }
 </style>
 
-@include('layouts.navbar')
+
 
 <div class="container" style="background-color: rgba(1, 2, 11, 0.7); padding: 20px; border-radius: 10px;">
     <h1 class="text-center" style="color: #cca772;">Profile</h1>

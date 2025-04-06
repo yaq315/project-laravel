@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+
     <h2 style="color: #cca772; font-family: 'Arial', sans-serif; text-align: center; margin-bottom: 20px;">Review for Booking #{{ $booking->id }}</h2>
 
     @if (session('success'))
@@ -15,11 +16,12 @@
                 <p><strong>Rating:</strong> 
                     @for ($i = 1; $i <= 5; $i++)
                         @if ($i <= $review->rating)
-                            <span style="color: gold;">⭐️</span>
+                            <span style="color: gold;">★</span>
                         @else
-                            <span>⭐️</span>
+                            <span style="color: #ccc;">★</span>
                         @endif
                     @endfor
+                    ({{ $review->rating }}/5)
                 </p>
                 <p><strong>Review:</strong> {{ $review->review ?? 'No review given' }}</p>
             </div>

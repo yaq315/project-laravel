@@ -20,25 +20,20 @@ class ContactController extends Controller
     }
 
     public function store(Request $request)
-    {
-    
-      $request->validate([
+{
+    $request->validate([
         'name' => 'required|string|max:255',
         'email' => 'required|email|max:255',
         'subject' => 'required|string|max:255',
         'message' => 'required|string',
     ]);
 
-   
-    Contact::create([
-        'name' => $request->name,
-        'email' => $request->email,
-        'subject' => $request->subject,
-        'message' => $request->message,
-    ]);
+    Contact::create($request->all());
 
-    return redirect()->route('contact.index')->with('success', 'Message sent successfully!');
-    }
+    return redirect()->back()->with('success', 'Message sent successfully!');
+    // أو إذا كنت تريد توجيهه لصفحة أخرى:
+    // return redirect()->route('contacts.create')->with('success', 'Message sent successfully!');
+}
 
     public function show(Contact $contact)
     {

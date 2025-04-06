@@ -2,6 +2,7 @@
 @extends('layouts.contain-about')
 
 
+
 @section('content')
 <section class="u-clearfix u-image u-shading u-section-1" id="carousel_80da" data-image-width="1980" data-image-height="1320">
     <div class="u-clearfix u-sheet u-valign-middle-xl u-sheet-1">
@@ -17,12 +18,11 @@
 				</div>
 			</div>
     </div>
-	</section>
-	<!-- ================ end banner area ================= -->
-@endsection
 
-   
-@section('content3')
+	<!-- ================ end banner area ================= -->
+
+
+
 <section class="welcome">
   <div class="container">
     <div class="row align-items-center">
@@ -50,15 +50,14 @@
           <h2 class="mb-4"><span class="d-block">Welcome</span> to RumQuest</h2>
           <p>Discover the breathtaking beauty and thrilling adventures of Wadi Rum. Whether you're seeking a serene escape or an adrenaline-packed journey, RumQuest offers unforgettable experiences in the heart of the desert.</p>
           <p>From jeep tours and camping under the stars to hiking and rock climbing, our adventures are designed to immerse you in the magic of Wadi Rum.</p>
-          <a class="button button--active home-banner-btn mt-4" href="{{ route('booking') }}">Explore Adventures</a>
+          <a class="button button--active home-banner-btn mt-4" href="{{ route('booking.index') }}">Explore Adventures</a>
         </div>
       </div>
     </div>
   </div>
 </section>
-@endsection
 
-@section('content5')
+
       <!-- ================ special section start ================= -->
       <section class="section-padding bg-porcelain">
         <div class="container">
@@ -117,10 +116,9 @@
           </div>
         </div>
       </section>
-      @endsection
+  
 
 
-      @section('content6')
       <!-- ================ Carousel section start ================= -->
       <section class="section-margin">
         <div class="container">

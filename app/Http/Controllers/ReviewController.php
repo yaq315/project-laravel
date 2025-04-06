@@ -10,17 +10,17 @@ use Illuminate\Support\Facades\Auth;
 
 class ReviewController extends Controller
 {
-    // عرض التقييمات لحجز معين
+    
     public function index($bookingId)
     {
         $booking = Booking::findOrFail($bookingId);
         return view('reviews.index', [
             'booking' => $booking,
-            'bookingId' => $bookingId // تمرير bookingId للقائمة
+            'bookingId' => $bookingId 
         ]);
     }
 
-    // إضافة تقييم لحجز معين
+   
     public function store(Request $request, $bookingId)
     {
         $validated = $request->validate([
